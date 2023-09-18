@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="searchBar">
+        <form action="/search">
+            <input type="text" id="cityInput" placeholder="Enter city" required>
+            <input type="submit" id="submitBtn" value="SEARCH">
+        </form>
+    </div>
+
+    <div class="todayForecastWrapper">
+        <div class="icon">
+        </div>
+        <div class="temperatureDetails">
+            <p class="todaysTemperature">16 F</p>
+            <button id="changeTempUnit">to Celsius</button>
+        </div>
+        <div class="weatherDetails">
+            <p class="humidity">Humidity</p>
+            <p class="windKPH">Wind, kph</p>
+            <p class="cloudness">Clouds</p>
+        </div>
+        <div class="cityDetails">
+            <p class="cityName">City Name, Country</p>
+            <p class="todaysDate">13/09/2023</p>
+            <p class="conditionText">Condition text</p>
+        </div>
+    </div>
+    
+    <div class="futureForecastWrapper">
+        <div class="0dayWrapper dayForecastWrapper">
+            <p class="date">14/09/2023</p>
+            <div class="icon"></div>
+            <div class="dayTemp">
+                <img src="pics/sun.svg" alt="sun">
+                <p id="day0temp">16 F</p>
+            </div>
+            <div class="nightTemp">
+                <img src="pics/moon.svg" alt="moon">
+                <p id="night0temp">9 F</p>
+            </div>
+        </div>
+
+        <div class="1dayWrapper dayForecastWrapper">
+            <p class="date">14/09/2023</p>
+            <div class="icon"></div>
+            <div class="dayTemp">
+                <img src="pics/sun.svg" alt="sun">
+                <p id="day0temp">16 F</p>
+            </div>
+            <div class="nightTemp">
+                <img src="pics/moon.svg" alt="moon">
+                <p id="night0temp">9 F</p>
+            </div>
+        </div>
+
+        <div class="2dayWrapper dayForecastWrapper">
+            <p class="date">14/09/2023</p>
+            <div class="icon"></div>
+            <div class="dayTemp">
+                <img src="pics/sun.svg" alt="sun">
+                <p id="day0temp">16 F</p>
+            </div>
+            <div class="nightTemp">
+                <img src="pics/moon.svg" alt="moon">
+                <p id="night0temp">9 F</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

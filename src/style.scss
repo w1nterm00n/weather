@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.searchBar{
+    margin-top: 10vh;
+    form{
+        display: flex;
+        gap: 55px;
+        justify-content: center;
+        #cityInput{
+            border-radius: 5px;
+            border: 1px solid #000;
+            background: #D1D6E4; 
+            padding: 13px 27px;
+            color: #7F7F7F;
+            font-size: 20px;
+            font-weight: 400; 
+        }
+        #submitBtn{
+            border-radius: 10px;
+            border: 1px solid #000;
+            background: #52A499; 
+            font-size: 20px;
+            font-weight: 700; 
+            padding: 13px 35px;
+        }
+    }
+    margin-bottom: 4vh;
+}
+
+.todayForecastWrapper{
+    display: flex;
+    background: #D9D9D9; 
+    padding: 24px;
+    width: fit-content;
+    margin: 0 auto;
+    .icon{
+        background-color: #A06767;
+        height: 110px;
+        width: 110px;
+        border-radius: 100%;
+        margin-right: 15px;
+    }
+    .temperatureDetails{
+        .todaysTemperature{
+            font-size: 32px; 
+            margin-bottom: 16px;
+        }
+        #changeTempUnit{
+            border-radius: 10px;
+            border: 1px solid #000;
+            background: #52A499; 
+            padding: 12px 16px;
+            font-size: 16px; 
+            margin-right: 19px;
+        }
+    }
+    .weatherDetails{
+        p{
+            font-size: 16px;
+            font-weight: 300; 
+        }
+        margin-right: 120px;
+    }
+    .cityDetails{
+        .cityName{
+            font-size: 24px;
+            font-weight: 500; 
+            margin-bottom: 2px;
+        }
+        .conditionText{
+            font-weight: 400; 
+        }
+    }
+}
+
+.futureForecastWrapper{
+    display: flex;
+    background: #D9D9D9; 
+    padding: 24px 50px;
+    width: fit-content;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    gap: 50px;
+    .dayForecastWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+            align-items: center;
+        .icon{
+            background-color: #A06767;
+            height: 90px;
+            width: 90px;
+            border-radius: 100%;
+            margin: 10px 0;
+        }
+        .dayTemp, .nightTemp{
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
