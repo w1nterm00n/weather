@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.searchBar {
+  margin-top: 10vh;
+  margin-bottom: 4vh;
+}
+.searchBar form {
+  display: flex;
+  gap: 55px;
+  justify-content: center;
+}
+.searchBar form #cityInput {
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: #D1D6E4;
+  padding: 13px 27px;
+  color: #292929;
+  font-size: 20px;
+  font-weight: 400;
+}
+.searchBar form #submitBtn {
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #52A499;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 13px 35px;
+}
+
+.todayForecastWrapper {
+  display: flex;
+  background: #D9D9D9;
+  padding: 24px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+.todayForecastWrapper .icon {
+  background-color: #A06767;
+  height: 110px;
+  width: 110px;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+.todayForecastWrapper .temperatureDetails .todaysTemperature {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.todayForecastWrapper .temperatureDetails #changeTempUnit {
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #52A499;
+  padding: 12px 16px;
+  font-size: 16px;
+  margin-right: 19px;
+}
+.todayForecastWrapper .weatherDetails {
+  margin-right: 120px;
+}
+.todayForecastWrapper .weatherDetails p {
+  font-size: 16px;
+  font-weight: 300;
+}
+.todayForecastWrapper .cityDetails .cityName {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.todayForecastWrapper .cityDetails .conditionText {
+  font-weight: 400;
+}
+
+.futureForecastWrapper {
+  display: flex;
+  background: #D9D9D9;
+  padding: 24px 50px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  gap: 50px;
+}
+.futureForecastWrapper .dayForecastWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.futureForecastWrapper .dayForecastWrapper .icon {
+  background-color: #A06767;
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  margin: 10px 0;
+}
+.futureForecastWrapper .dayForecastWrapper .dayTemp, .futureForecastWrapper .dayForecastWrapper .nightTemp {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */
