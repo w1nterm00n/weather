@@ -11,6 +11,21 @@ const displayTodayWthr = function (todaysWeatherObj) {
 	localtime.textContent = todaysWeatherObj.localtime;
 	let todayCondition = todayForecast.querySelector("#conditionText");
 	todayCondition.textContent = todaysWeatherObj.condition;
+	let todayIcon = todayForecast.querySelector(".icon");
+	let iconLink = todaysWeatherObj.icon;
+
+	let getTodayIcon = async function (iconLink) {
+		try {
+			let searchString = "https:" + iconLink;
+			let response = await fetch(searchString, { mode: "cors" });
+			todayIcon.style.backgroundImage = `url(${response.url})`;
+			todayIcon.style.backgroundRepeat = "no-repeat";
+			todayIcon.style.backgroundSize = "cover";
+		} catch (error) {
+			console.error("Произошла ошибка:", error);
+		}
+	};
+	getTodayIcon(iconLink);
 
 	//displaying weather info
 	let humidity = todayForecast.querySelector("#humidity");
@@ -41,6 +56,18 @@ const displayForecast = function (threeDayForecastArr) {
 	let futureForecast = document.querySelector(".futureForecastWrapper");
 	//todayForecast.style.display = "flex";
 
+	let getForecastIcon = async function (iconLink, dayIcon) {
+		try {
+			let searchString = "https:" + iconLink;
+			let response = await fetch(searchString, { mode: "cors" });
+			dayIcon.style.backgroundImage = `url(${response.url})`;
+			dayIcon.style.backgroundRepeat = "no-repeat";
+			dayIcon.style.backgroundSize = "cover";
+		} catch (error) {
+			console.error("Произошла ошибка:", error);
+		}
+	};
+
 	let day0 = futureForecast.querySelector(".day0Wrapper");
 	let date0 = day0.querySelector(".date");
 	date0.textContent = threeDayForecastArr[0].date;
@@ -48,6 +75,9 @@ const displayForecast = function (threeDayForecastArr) {
 	dayTC0.textContent = threeDayForecastArr[0].dayTC;
 	let nightTC0 = day0.querySelector("#night0temp");
 	nightTC0.textContent = threeDayForecastArr[0].nightTC;
+	let day0Icon = day0.querySelector(".icon");
+	let icon0Link = threeDayForecastArr[0].icon;
+	getForecastIcon(icon0Link, day0Icon);
 
 	let day1 = futureForecast.querySelector(".day1Wrapper");
 	let date1 = day1.querySelector(".date");
@@ -56,6 +86,9 @@ const displayForecast = function (threeDayForecastArr) {
 	dayTC1.textContent = threeDayForecastArr[1].dayTC;
 	let nightTC1 = day1.querySelector("#night1temp");
 	nightTC1.textContent = threeDayForecastArr[1].nightTC;
+	let day1Icon = day1.querySelector(".icon");
+	let icon1Link = threeDayForecastArr[1].icon;
+	getForecastIcon(icon1Link, day1Icon);
 
 	let day2 = futureForecast.querySelector(".day2Wrapper");
 	let date2 = day2.querySelector(".date");
@@ -64,7 +97,13 @@ const displayForecast = function (threeDayForecastArr) {
 	dayTC2.textContent = threeDayForecastArr[2].dayTC;
 	let nightTC2 = day2.querySelector("#night2temp");
 	nightTC2.textContent = threeDayForecastArr[2].nightTC;
+	let day2Icon = day2.querySelector(".icon");
+	let icon2Link = threeDayForecastArr[2].icon;
+	getForecastIcon(icon2Link, day2Icon);
 	//displaying forecast for 3 days
 };
 
+// const changeTempScale = function() {
+
+// }
 export { displayTodayWthr, displayForecast };

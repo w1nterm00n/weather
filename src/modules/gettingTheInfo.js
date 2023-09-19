@@ -55,6 +55,7 @@ const gettingTheInfo = function () {
 			todaysWeather.tempF = weatherData.current.temp_f;
 			todaysWeather.windKPH = weatherData.current.wind_kph;
 			todaysWeather.cloud = weatherData.current.cloud;
+			todaysWeather.icon = weatherData.current.condition.icon;
 		},
 
 		collectThreeDayForecast(weatherData) {
@@ -67,6 +68,8 @@ const gettingTheInfo = function () {
 				weatherData.forecast.forecastday[0].day.mintemp_c;
 			threeDayForecast[0].nightTF =
 				weatherData.forecast.forecastday[0].day.mintemp_f;
+			threeDayForecast[0].icon =
+				weatherData.forecast.forecastday[0].day.condition.icon;
 
 			threeDayForecast[1].date = weatherData.forecast.forecastday[1].date;
 			threeDayForecast[1].dayTC =
@@ -77,6 +80,8 @@ const gettingTheInfo = function () {
 				weatherData.forecast.forecastday[1].day.mintemp_c;
 			threeDayForecast[1].nightTF =
 				weatherData.forecast.forecastday[1].day.mintemp_f;
+			threeDayForecast[1].icon =
+				weatherData.forecast.forecastday[1].day.condition.icon;
 
 			threeDayForecast[2].date = weatherData.forecast.forecastday[2].date;
 			threeDayForecast[2].dayTC =
@@ -87,6 +92,8 @@ const gettingTheInfo = function () {
 				weatherData.forecast.forecastday[2].day.mintemp_c;
 			threeDayForecast[2].nightTF =
 				weatherData.forecast.forecastday[2].day.mintemp_f;
+			threeDayForecast[2].icon =
+				weatherData.forecast.forecastday[2].day.condition.icon;
 		},
 	};
 };
