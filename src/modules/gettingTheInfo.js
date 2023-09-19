@@ -1,3 +1,5 @@
+import { displayTodayWthr, displayForecast } from "./display";
+
 const gettingTheInfo = function () {
 	let form = document.getElementById("citySearch");
 	let city = form.querySelector("#cityInput");
@@ -19,6 +21,7 @@ const gettingTheInfo = function () {
 			let weatherData = await response.json();
 
 			collectInfoToObjects.collectTodaysWeather(weatherData);
+			displayTodayWthr(todaysWeather);
 		} catch (error) {
 			console.error("Произошла ошибка:", error);
 		}
@@ -34,6 +37,7 @@ const gettingTheInfo = function () {
 			let weatherData = await response.json();
 
 			collectInfoToObjects.collectThreeDayForecast(weatherData);
+			displayForecast(threeDayForecast);
 		} catch (error) {
 			console.error("Произошла ошибка:", error);
 		}
@@ -44,13 +48,13 @@ const gettingTheInfo = function () {
 		collectTodaysWeather(weatherData) {
 			todaysWeather.city = weatherData.location.name;
 			todaysWeather.country = weatherData.location.country;
+			todaysWeather.localtime = weatherData.location.localtime;
 			todaysWeather.condition = weatherData.current.condition.text;
 			todaysWeather.humidity = weatherData.current.humidity;
 			todaysWeather.tempC = weatherData.current.temp_c;
 			todaysWeather.tempF = weatherData.current.temp_f;
 			todaysWeather.windKPH = weatherData.current.wind_kph;
 			todaysWeather.cloud = weatherData.current.cloud;
-			console.log(todaysWeather);
 		},
 
 		collectThreeDayForecast(weatherData) {
@@ -83,7 +87,6 @@ const gettingTheInfo = function () {
 				weatherData.forecast.forecastday[2].day.mintemp_c;
 			threeDayForecast[2].nightTF =
 				weatherData.forecast.forecastday[2].day.mintemp_f;
-			console.log(threeDayForecast);
 		},
 	};
 };

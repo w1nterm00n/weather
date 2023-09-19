@@ -45,7 +45,7 @@
   border-radius: 100%;
   margin-right: 15px;
 }
-.todayForecastWrapper .temperatureDetails .todaysTemperature {
+.todayForecastWrapper .temperatureDetails #todaysTemperature {
   font-size: 32px;
   margin-bottom: 16px;
 }
@@ -64,12 +64,21 @@
   font-size: 16px;
   font-weight: 300;
 }
-.todayForecastWrapper .cityDetails .cityName {
+.todayForecastWrapper .locationDetails .cityDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todayForecastWrapper .locationDetails .cityDetails p {
+  display: block;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 2px;
 }
-.todayForecastWrapper .cityDetails .conditionText {
+.todayForecastWrapper .locationDetails .cityDetails #country {
+  margin-left: 3px;
+}
+.todayForecastWrapper .locationDetails #conditionText {
   font-weight: 400;
 }
 
