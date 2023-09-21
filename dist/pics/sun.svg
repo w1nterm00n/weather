@@ -1,0 +1,18 @@
+<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="sun" clip-path="url(#clip0_105_91)">
+<path id="Vector" d="M8.49999 12.0417C10.456 12.0417 12.0417 10.456 12.0417 8.5C12.0417 6.54399 10.456 4.95833 8.49999 4.95833C6.54399 4.95833 4.95833 6.54399 4.95833 8.5C4.95833 10.456 6.54399 12.0417 8.49999 12.0417Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M8.5 0.708332V2.125" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M8.5 14.875V16.2917" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M2.98917 2.98917L3.995 3.995" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M13.005 13.005L14.0108 14.0108" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M0.708328 8.5H2.12499" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M14.875 8.5H16.2917" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M2.98917 14.0108L3.995 13.005" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_9" d="M13.005 3.995L14.0108 2.98917" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_105_91">
+<rect width="17" height="17" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -11,6 +11,7 @@ const gettingTheInfo = function () {
 
 	let todaysWeather = {};
 	let threeDayForecast = [{}, {}, {}];
+	let scale = "F";
 
 	let getTodayWeather = async function (city) {
 		try {
@@ -21,7 +22,7 @@ const gettingTheInfo = function () {
 			let weatherData = await response.json();
 
 			collectInfoToObjects.collectTodaysWeather(weatherData);
-			displayTodayWthr(todaysWeather);
+			displayTodayWthr(todaysWeather, scale);
 		} catch (error) {
 			console.error("Произошла ошибка:", error);
 		}
@@ -37,7 +38,7 @@ const gettingTheInfo = function () {
 			let weatherData = await response.json();
 
 			collectInfoToObjects.collectThreeDayForecast(weatherData);
-			displayForecast(threeDayForecast);
+			displayForecast(threeDayForecast, scale);
 		} catch (error) {
 			console.error("Произошла ошибка:", error);
 		}
@@ -96,6 +97,18 @@ const gettingTheInfo = function () {
 				weatherData.forecast.forecastday[2].day.condition.icon;
 		},
 	};
+
+	//add event listener to button which changes the t scale
+	let changeScaleBtn = document.getElementById("changeTempUnit");
+	changeScaleBtn.addEventListener("click", function () {
+		if (scale == "F") {
+			scale = "C";
+		} else if (scale == "C") {
+			scale = "F";
+		}
+		displayTodayWthr(todaysWeather, scale);
+		displayForecast(threeDayForecast, scale);
+	});
 };
 
 export { gettingTheInfo };
