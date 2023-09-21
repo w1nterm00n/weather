@@ -1,6 +1,6 @@
 const displayTodayWthr = function (todaysWeatherObj, scale) {
 	let todayForecast = document.querySelector(".todayForecastWrapper");
-	//todayForecast.style.display = "flex";
+	todayForecast.style.display = "flex";
 
 	//displaying local info
 	let cityName = todayForecast.querySelector("#cityName");
@@ -59,7 +59,7 @@ const displayTodayWthr = function (todaysWeatherObj, scale) {
 const displayForecast = function (threeDayForecastArr, scale) {
 	//displaying forecast for 3 days
 	let futureForecast = document.querySelector(".futureForecastWrapper");
-	//todayForecast.style.display = "flex";
+	futureForecast.style.display = "flex";
 
 	let getForecastIcon = async function (iconLink, dayIcon) {
 		try {
