@@ -100,11 +100,14 @@ const gettingTheInfo = function () {
 
 	//add event listener to button which changes the t scale
 	let changeScaleBtn = document.getElementById("changeTempUnit");
+
 	changeScaleBtn.addEventListener("click", function () {
 		if (scale == "F") {
 			scale = "C";
+			changeScaleBtn.textContent = "to Fahrenheit";
 		} else if (scale == "C") {
 			scale = "F";
+			changeScaleBtn.textContent = "to Celsius";
 		}
 		displayTodayWthr(todaysWeather, scale);
 		displayForecast(threeDayForecast, scale);
