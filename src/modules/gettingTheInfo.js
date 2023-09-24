@@ -21,10 +21,14 @@ const gettingTheInfo = function () {
 			let response = await fetch(searchString, { mode: "cors" });
 			let weatherData = await response.json();
 
+			if (!response.ok) {
+				throw new Error("Произошла ошибка: " + response.status);
+			}
 			collectInfoToObjects.collectTodaysWeather(weatherData);
 			displayTodayWthr(todaysWeather, scale);
 		} catch (error) {
 			console.error("Произошла ошибка:", error);
+			alert("Unknown location");
 		}
 	};
 
@@ -33,10 +37,12 @@ const gettingTheInfo = function () {
 			let searchString =
 				"http://api.weatherapi.com/v1/forecast.json?key=d1daec9ddc01455f82a220024232608&q=" +
 				city +
-				"&days=3&aqi=no&alerts=no";
+				"&days=3";
 			let response = await fetch(searchString, { mode: "cors" });
 			let weatherData = await response.json();
-
+			if (!response.ok) {
+				throw new Error("Произошла ошибка: " + response.status);
+			}
 			collectInfoToObjects.collectThreeDayForecast(weatherData);
 			displayForecast(threeDayForecast, scale);
 		} catch (error) {
