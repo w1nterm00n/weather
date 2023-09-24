@@ -35,7 +35,7 @@ const gettingTheInfo = function () {
 	let getThreeDayForecast = async function (city) {
 		try {
 			let searchString =
-				"http://api.weatherapi.com/v1/forecast.json?key=d1daec9ddc01455f82a220024232608&q=" +
+				"https://api.weatherapi.com/v1/forecast.json?key=d1daec9ddc01455f82a220024232608&q=" +
 				city +
 				"&days=3";
 			let response = await fetch(searchString, { mode: "cors" });
