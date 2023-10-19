@@ -56,28 +56,31 @@
   font-size: 16px;
   margin-right: 19px;
 }
-.todayForecastWrapper .weatherDetails {
+.todayForecastWrapper .textData {
+  display: flex;
+}
+.todayForecastWrapper .textData .weatherDetails {
   margin-right: 120px;
 }
-.todayForecastWrapper .weatherDetails p {
+.todayForecastWrapper .textData .weatherDetails p {
   font-size: 16px;
   font-weight: 300;
 }
-.todayForecastWrapper .locationDetails .cityDetails {
+.todayForecastWrapper .textData .locationDetails .cityDetails {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.todayForecastWrapper .locationDetails .cityDetails p {
+.todayForecastWrapper .textData .locationDetails .cityDetails p {
   display: block;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 2px;
 }
-.todayForecastWrapper .locationDetails .cityDetails #country {
+.todayForecastWrapper .textData .locationDetails .cityDetails #country {
   margin-left: 3px;
 }
-.todayForecastWrapper .locationDetails #conditionText {
+.todayForecastWrapper .textData .locationDetails #conditionText {
   font-weight: 400;
 }
 
@@ -110,4 +113,56 @@
   gap: 6px;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .todayForecastWrapper .icon {
+    height: 60px;
+    width: 60px;
+    margin-right: 10px;
+  }
+  .todayForecastWrapper .textData .weatherDetails {
+    margin-right: 30px;
+  }
+  .todayForecastWrapper .textData .locationDetails .cityDetails p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 800px) {
+  .searchBar form {
+    gap: 20px;
+  }
+  .searchBar form #cityInput {
+    width: 160px;
+  }
+  .searchBar form #submitBtn {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 13px 24px;
+  }
+  .todayForecastWrapper {
+    padding: 16px;
+  }
+  .todayForecastWrapper .temperatureDetails p#todaysTemperature {
+    font-size: 24px;
+  }
+  .todayForecastWrapper .temperatureDetails #changeTempUnit {
+    padding: 10px 14px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  .todayForecastWrapper .textData {
+    display: block;
+  }
+  .todayForecastWrapper .textData .weatherDetails {
+    margin-bottom: 20px;
+  }
+  .futureForecastWrapper {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+  .futureForecastWrapper .dayForecastWrapper .icon {
+    height: 60px;
+    width: 60px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -21,7 +21,7 @@
         #submitBtn{
             border-radius: 10px;
             border: 1px solid #000;
-            background: #52A499; 
+            background: #814f0d; 
             font-size: 20px;
             font-weight: 700; 
             padding: 13px 35px;
@@ -104,5 +104,11 @@
             justify-content: center;
             align-items: center;
         }
+    }
+}
+
+@media (max-width: 500px) {
+    *{
+        background-color: #7F7F7F;
     }
 }
