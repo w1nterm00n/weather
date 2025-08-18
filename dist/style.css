@@ -24,13 +24,6 @@
   top: -200px;
   left: -100px;
 }
-.backgroundWrapper .circle-pink {
-  width: 75px;
-  height: 75px;
-  background: linear-gradient(90deg, #EC008C 0%, #FC6767 100%);
-  top: 150px;
-  right: 650px;
-}
 .backgroundWrapper .circle-orange {
   background: linear-gradient(90deg, #FF4E50 0%, #F9D423 100%);
   width: 450px;
@@ -41,6 +34,9 @@
 }
 
 .mainCardWrapper {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
   padding: 20px;
   max-width: 350px;
   margin: 15vh auto 0;
@@ -48,6 +44,13 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.22) 100%);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
+  height: 50px;
+  transition: height 0.6s ease;
+  backdrop-filter: blur(20px);
+}
+
+.mainCardWrapper.open {
+  height: 480px;
 }
 
 .searchBar #citySearch {
@@ -101,7 +104,8 @@
 }
 
 .todayForecastWrapper {
-  display: none;
+  opacity: 0;
+  display: flex;
   padding: 24px 0;
   width: -moz-max-content;
   width: max-content;
@@ -165,7 +169,8 @@
 }
 
 .futureForecastWrapper {
-  display: none;
+  opacity: 0;
+  display: flex;
   width: -moz-fit-content;
   width: fit-content;
   margin-top: 20px;

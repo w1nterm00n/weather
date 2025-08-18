@@ -1,13 +1,30 @@
+import { playAnim } from "./animation";
 import { displayTodayWthr, displayForecast } from "./display";
 
 const gettingTheInfo = function () {
 	let form = document.getElementById("citySearch");
+	const card  = document.querySelector('.mainCardWrapper');
+	const todayForecast = document.querySelector('.todayForecastWrapper');
+	const futureForecast = document.querySelector('.futureForecastWrapper');
+	let open = false;
 	let city = form.querySelector("#cityInput");
-	form.addEventListener("submit", function (event) {
+
+	form.addEventListener("submit", async function (event) {
 		event.preventDefault();
 		getTodayWeather(city.value);
 		getThreeDayForecast(city.value);
+		open = false;
+		card.classList.remove('open');
+		card.classList.toggle('open');
+		await showAnimation();
 	});
+
+	async function showAnimation () {
+		if (open) return;
+		open = true;
+		await playAnim(todayForecast, 'animate__fadeInDown', 150);
+		await playAnim(futureForecast, 'animate__fadeInDown', 150);
+	}
 
 	let todaysWeather = {};
 	let threeDayForecast = [{}, {}, {}];
