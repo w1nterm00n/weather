@@ -1,102 +1,187 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.backgroundWrapper{
+    background-color: #000;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    .bg-circle-decoration{
+        border-radius: 100%;
+        background-color: #52A499;
+        position: absolute;
+    }
+    .circle-blue{
+        background: linear-gradient(140deg, #26D0CE 0%, #1A2980 100%);
+        width: 800px;
+        height: 800px;
+        z-index: -1;
+        top: -200px;
+        left: -100px;    
+    }
+    .circle-pink{
+        width: 75px;
+        height: 75px;
+        background: linear-gradient(90deg, #EC008C 0%, #FC6767 100%);
+        top: 150px;
+        right: 650px; 
+    }
+    .circle-orange{
+        background: linear-gradient(90deg, #FF4E50 0%, #F9D423 100%);
+        width: 450px;
+        height: 450px;
+        bottom: -150px;
+        right: 200px;
+        z-index: -1;
+    }
+}
+
+.mainCardWrapper{
+    padding: 20px;
+    max-width: 350px;
+    //width: fit-content;
+    margin: 15vh auto 0;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.22) 100%);
+    backdrop-filter: blur(20px);
 }
 
 .searchBar{
-    margin-top: 10vh;
-    form{
+    #citySearch{
         display: flex;
-        gap: 55px;
+        gap: 10px;
         justify-content: center;
+        position: relative;
+        .search_location_img{
+            position: absolute;
+            left: 10px;
+            top: 13px; 
+            padding-right: 10px;
+        }
         #cityInput{
-            border-radius: 5px;
-            border: 1px solid #000;
-            background: #D1D6E4; 
-            padding: 13px 27px;
-            color: #292929;
+            width: 90%;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: transparent; 
+            padding: 13px 27px 13px 50px;
+            color: #fff !important;
             font-size: 20px;
             font-weight: 400; 
         }
+        #cityInput::placeholder{
+            color: #fff !important;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        #cityInput:focus {
+            outline: none;
+        }        
         #submitBtn{
-            border-radius: 10px;
-            border: 1px solid #000;
-            background: #52A499; 
-            font-size: 20px;
-            font-weight: 700; 
-            padding: 13px 35px;
+            position: absolute;
+            right: 15px;
+            top: 12px;
+            background-image: url(pics/search.svg);
+            background-color: transparent;
+            border: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
         }
     }
-    margin-bottom: 4vh;
+    // margin-bottom: 4vh;
 }
 
 .todayForecastWrapper{
     display: none;
-    background: #D9D9D9; 
-    padding: 24px;
-    width: fit-content;
+    padding: 24px 0;
+    width: max-content;
     margin: 0 auto;
-    .icon{
-        height: 110px;
-        width: 110px;
-        border-radius: 100%;
-        margin-right: 15px;
-    }
-    .temperatureDetails{
-        #todaysTemperature{
-            font-size: 32px; 
-            margin-bottom: 16px;
+    flex-direction: row !important;
+    color: #fff;
+    gap: 20px;
+    .iconAndTemperature{
+        .icon{
+            height: 90px;
+            width: 90px;
+            border-radius: 100%;
+            margin-right: 15px;
         }
-        #changeTempUnit{
-            border-radius: 10px;
-            border: 1px solid #000;
-            background: #52A499; 
-            padding: 12px 16px;
-            font-size: 16px; 
-            margin-right: 19px;
+        .temperatureDetails{
+            #todaysTemperature{
+                font-size: 30px; 
+                margin-bottom: 5px;
+            }
+            #changeTempUnit{
+                border-radius: 10px;
+                padding: 6px 8px;
+                font-size: 14px; 
+                margin-right: 19px;
+                background: transparent;
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                color: #fff;
+                font-weight: 600;
+            }
         }
     }
-    .textData{
+    .locationDetails{
         display: flex;
-        .weatherDetails{
+        margin-top: 10px;
+        margin-left: 10px;    
+        flex-direction: column;
+        .cityDetails{
+            //max-width: 200px;
             p{
-                font-size: 16px;
-                font-weight: 300; 
+                display: block;
+                font-size: 24px;
+                font-weight: 500; 
+                margin-bottom: 2px;
             }
-            margin-right: 120px;
         }
-        .locationDetails{
-            .cityDetails{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                p{
-                    display: block;
-                    font-size: 24px;
-                    font-weight: 500; 
-                    margin-bottom: 2px;
-                }
-                #country{
-                    margin-left: 3px;
-                }
-            }
+        .dateAndCondition{
+            font-size: 12px;
             #conditionText{
                 font-weight: 400; 
             }
         }
+        .textData{
+            display: flex;
+            margin-top: 20px;
+            .weatherDetails{
+                //margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                //gap: 10px;
+                p{
+                    font-size: 14px;
+                    font-weight: 300; 
+                }
+                //margin-right: 120px;
+            }
+        }
+    }
+    .otherDetails{
+        display: flex;
     }
 }
 
 .futureForecastWrapper{
     display: none;
-    background: #D9D9D9; 
-    padding: 24px 50px;
+    //padding: 24px 0px;
     width: fit-content;
     margin-top: 20px;
     margin-right: auto;
     margin-bottom: 0px;
     margin-left: auto;
-    gap: 50px;
+    gap: 20px;
+    color: #fff;
     .dayForecastWrapper{
         display: flex;
         flex-direction: column;
@@ -113,6 +198,7 @@
             gap: 6px;
             justify-content: center;
             align-items: center;
+            font-size: 14px;
         }
     }
 }

@@ -52,7 +52,7 @@ const displayTodayWthr = function (todaysWeatherObj, scale) {
 	if (scale === "F") {
 		todayTemp.textContent = todaysWeatherObj.tempF + " " + scale;
 	} else if (scale === "C") {
-		todayTemp.textContent = todaysWeatherObj.tempC + " " + scale;
+		todayTemp.textContent = todaysWeatherObj.tempC + " °" + scale;
 	}
 };
 
@@ -79,8 +79,8 @@ const displayForecast = function (threeDayForecastArr, scale) {
 	let dayT0 = day0.querySelector("#day0temp");
 	let nightT0 = day0.querySelector("#night0temp");
 	if (scale === "C") {
-		dayT0.textContent = threeDayForecastArr[0].dayTC + " " + scale;
-		nightT0.textContent = threeDayForecastArr[0].nightTC + " " + scale;
+		dayT0.textContent = threeDayForecastArr[0].dayTC + " °" + scale;
+		nightT0.textContent = threeDayForecastArr[0].nightTC + " °" + scale;
 	} else {
 		dayT0.textContent = threeDayForecastArr[0].dayTF + " " + scale;
 		nightT0.textContent = threeDayForecastArr[0].nightTF + " " + scale;
@@ -96,8 +96,8 @@ const displayForecast = function (threeDayForecastArr, scale) {
 	let dayT1 = day1.querySelector("#day1temp");
 	let nightT1 = day1.querySelector("#night1temp");
 	if (scale === "C") {
-		dayT1.textContent = threeDayForecastArr[1].dayTC + " " + scale;
-		nightT1.textContent = threeDayForecastArr[1].nightTC + " " + scale;
+		dayT1.textContent = threeDayForecastArr[1].dayTC + " °" + scale;
+		nightT1.textContent = threeDayForecastArr[1].nightTC + " °" + scale;
 	} else {
 		dayT1.textContent = threeDayForecastArr[1].dayTF + " " + scale;
 		nightT1.textContent = threeDayForecastArr[1].nightTF + " " + scale;
@@ -113,8 +113,8 @@ const displayForecast = function (threeDayForecastArr, scale) {
 	let dayT2 = day2.querySelector("#day2temp");
 	let nightT2 = day2.querySelector("#night2temp");
 	if (scale === "C") {
-		dayT2.textContent = threeDayForecastArr[2].dayTC + " " + scale;
-		nightT2.textContent = threeDayForecastArr[2].nightTC + " " + scale;
+		dayT2.textContent = threeDayForecastArr[2].dayTC + " °" + scale;
+		nightT2.textContent = threeDayForecastArr[2].nightTC + " °" + scale;
 	} else {
 		dayT2.textContent = threeDayForecastArr[2].dayTF + " " + scale;
 		nightT2.textContent = threeDayForecastArr[2].nightTF + " " + scale;
