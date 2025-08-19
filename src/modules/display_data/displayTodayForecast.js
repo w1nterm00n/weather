@@ -34,24 +34,16 @@ export function displayTodayForecast (todaysWeatherObj, scale) {
 	windKPH.textContent = "Wind: " + todaysWeatherObj.windKPH + " kph";
 	let cloudness = todayForecast.querySelector("#cloudness");
 
-	let cloudStatus = "";
-	if (todaysWeatherObj.cloud == 0) {
-		cloudStatus = "Clear";
-	} else if (0 < todaysWeatherObj.cloud && todaysWeatherObj.cloud < 26) {
-		cloudStatus = "Little cloudy";
-	} else if (24 < todaysWeatherObj.cloud && todaysWeatherObj.cloud < 51) {
-		cloudStatus = "Partly cloudy";
-	} else if (50 < todaysWeatherObj.cloud && todaysWeatherObj.cloud < 85) {
-		cloudStatus = "Cloudy";
-	} else if (84 < todaysWeatherObj.cloud) {
-		cloudStatus = "Mainly cloudy";
+	function getCloudStatus(value) {
+		if (value === 0) return "Clear";
+		if (value <= 25) return "Little cloudy";
+		if (value <= 50) return "Partly cloudy";
+		if (value <= 85) return "Cloudy";
+		return "Mainly cloudy";
 	}
-	cloudness.textContent = "Cloudness: " + cloudStatus;
+	cloudness.textContent = "Cloudness: " + getCloudStatus(todaysWeatherObj.cloud);
 
 	let todayTemp = todayForecast.querySelector("#todaysTemperature");
-	if (scale === "F") {
-		todayTemp.textContent = todaysWeatherObj.tempF + " " + scale;
-	} else if (scale === "C") {
-		todayTemp.textContent = todaysWeatherObj.tempC + " °" + scale;
-	}
+	let tempScale = scale === "C" ? "tempC" : "tempF";
+	todayTemp.textContent = `${todaysWeatherObj[tempScale]} °${scale}`;
 };
