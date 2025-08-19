@@ -16,7 +16,6 @@ let city = form.querySelector("#cityInput");
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
     await handleWeatherSearch(city.value);
-
     open = false;
     card.classList.remove('open');
     card.classList.toggle('open');
