@@ -10,14 +10,14 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "webpack": "^5.88.2"
-  },
   "devDependencies": {
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
     "node-sass": "^9.0.0",
     "sass-loader": "^13.3.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.2"
   }
