@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "strict": true,
+    "sourceMap": true,
+    "outDir": "build",
+    "rootDir": "src",
+    "skipLibCheck": true
+  }
+}
