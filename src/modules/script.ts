@@ -2,27 +2,25 @@ import { playAnim } from "./utlis/animation";
 import { displayThreeDayForecast } from "./display_data/displayThreeDaysForecast";
 import { displayTodayForecast } from "./display_data/displayTodayForecast";
 import { fetchData } from "./fetch_data/fetchData";
-import { mapThreeDaysForecast } from "./mappers/mapThreeDaysForecast";
-import { mapTodayForecast } from "./mappers/mapTodayForecast";
 import { changeScale } from "./utlis/changeScale";
 
-let form = document.getElementById("citySearch");
-const card  = document.querySelector('.mainCardWrapper');
-const todayForecast = document.querySelector('.todayForecastWrapper');
-const futureForecast = document.querySelector('.futureForecastWrapper');
+let form = document.getElementById("citySearch") as HTMLElement;
+const card  = document.querySelector('.mainCardWrapper') as HTMLElement;
+const todayForecast = document.querySelector('.todayForecastWrapper') as HTMLElement;
+const futureForecast = document.querySelector('.futureForecastWrapper') as HTMLElement;
 let open = false;
-let city = form.querySelector("#cityInput");
+let city = form.querySelector("#cityInput") as HTMLElement;
 
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
-    await handleWeatherSearch(city.value);
+    await handleWeatherSearch(city.value); //типизирую тут
     open = false;
     card.classList.remove('open');
     card.classList.toggle('open');
     await showAnimation();
 });
 
-async function handleWeatherSearch (city) {
+async function handleWeatherSearch (city: string) {
     let fetchedData = await fetchData(city);
     displayTodayForecast(fetchedData[0], "F");
     displayThreeDayForecast(fetchedData[1], "F");

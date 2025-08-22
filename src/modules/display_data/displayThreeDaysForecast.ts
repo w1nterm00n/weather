@@ -1,9 +1,11 @@
-export function displayThreeDayForecast (threeDayForecastArr, scale) {
+import { Scale } from "../state";
+
+export function displayThreeDayForecast (threeDayForecastArr, scale: Scale) {
 	//displaying forecast for 3 days
 	let futureForecast = document.querySelector(".futureForecastWrapper") as HTMLElement;
 	futureForecast.style.display = "flex";
 
-	let getForecastIcon = async function (iconLink: string, dayIcon: HTMLElement) {
+	let getForecastIcon = async function (iconLink: string, dayIcon: HTMLElement): Promise<void> {
 		try {
 			let searchString = "https:" + iconLink;
 			let response = await fetch(searchString, { mode: "cors" });
@@ -15,7 +17,7 @@ export function displayThreeDayForecast (threeDayForecastArr, scale) {
 		}
 	};
 
-	function displayDayNForecast (n: number) {
+	function displayDayNForecast (n: number): void {
 		let dayN = futureForecast.querySelector(`.day${n}Wrapper`) as HTMLElement;
 		let dateN = dayN.querySelector(".date") as HTMLElement;
 		dateN.textContent = threeDayForecastArr[n].date;

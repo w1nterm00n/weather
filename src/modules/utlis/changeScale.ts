@@ -1,10 +1,10 @@
 import { displayThreeDayForecast } from "../display_data/displayThreeDaysForecast";
 import { displayTodayForecast } from "../display_data/displayTodayForecast";
-import { getScale } from "../state";
+import { getScale, Scale } from "../state";
 
 export function changeScale(todayForecastObject, threeDayForecastArray) {
-    let scale = getScale();
-    let changeScaleBtn = document.getElementById("changeTempUnit");
+    let scale: Scale = getScale();
+    let changeScaleBtn = document.getElementById("changeTempUnit") as HTMLElement;
 
     changeScaleBtn.addEventListener("click", function () {
         if (scale == "F") {

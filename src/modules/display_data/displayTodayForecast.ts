@@ -1,4 +1,6 @@
-export function displayTodayForecast (todaysWeatherObj, scale) {
+import { Scale } from "../state";
+
+export function displayTodayForecast (todaysWeatherObj, scale: Scale) {
 	let todayForecast = document.querySelector(".todayForecastWrapper") as HTMLElement;
 	todayForecast.style.display = "flex";
 
@@ -14,7 +16,7 @@ export function displayTodayForecast (todaysWeatherObj, scale) {
 	let todayIcon = todayForecast.querySelector(".icon") as HTMLElement;
 	let iconLink = todaysWeatherObj.icon;
 
-	let getTodayIcon = async function (iconLink: string) {
+	let getTodayIcon = async function (iconLink: string): Promise<void> {
 		try {
 			let searchString = "https:" + iconLink;
 			let response = await fetch(searchString, { mode: "cors" });
@@ -34,7 +36,7 @@ export function displayTodayForecast (todaysWeatherObj, scale) {
 	windKPH.textContent = "Wind: " + todaysWeatherObj.windKPH + " kph";
 	let cloudness = todayForecast.querySelector("#cloudness") as HTMLElement;
 
-	function getCloudStatus(value: number) {
+	function getCloudStatus(value: number): string {
 		if (value === 0) return "Clear";
 		if (value <= 25) return "Little cloudy";
 		if (value <= 50) return "Partly cloudy";
