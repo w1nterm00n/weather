@@ -1,4 +1,4 @@
-export async function fetchThreeDayForecast (city) {
+export async function fetchThreeDayForecast (city: string) {
     try {
         let searchString =
             "https://api.weatherapi.com/v1/forecast.json?key=d1daec9ddc01455f82a220024232608&q=" +
