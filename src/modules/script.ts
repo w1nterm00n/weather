@@ -24,10 +24,9 @@ form.addEventListener("submit", async function (event) {
 
 async function handleWeatherSearch (city) {
     let fetchedData = await fetchData(city);
-    let threeDayForecastArray = mapThreeDaysForecast(fetchedData[1]);
     displayTodayForecast(fetchedData[0], "F");
-    displayThreeDayForecast(threeDayForecastArray, "F");
-    changeScale(fetchedData[0], threeDayForecastArray);
+    displayThreeDayForecast(fetchedData[1], "F");
+    changeScale(fetchedData[0], fetchedData[1]);
 }
 
 async function showAnimation () {

@@ -17,7 +17,6 @@ export async function fetchTodayWeather (city: string): Promise<FetchedTodayData
             city;
         let response = await fetch(searchString, { mode: "cors" });
         let weatherData = await response.json();
-        console.log("weatherData ", weatherData);
 
         if (!response.ok) {
             throw new Error("Произошла ошибка: " + response.status);
