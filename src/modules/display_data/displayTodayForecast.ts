@@ -1,6 +1,7 @@
+import { FetchedTodayData } from "../fetch_data/fetchTodayForecast";
 import { Scale } from "../state";
 
-export function displayTodayForecast (todaysWeatherObj, scale: Scale) {
+export function displayTodayForecast (todaysWeatherObj: FetchedTodayData, scale: Scale) {
 	let todayForecast = document.querySelector(".todayForecastWrapper") as HTMLElement;
 	todayForecast.style.display = "flex";
 
@@ -46,6 +47,8 @@ export function displayTodayForecast (todaysWeatherObj, scale: Scale) {
 	cloudness.textContent = "Cloudness: " + getCloudStatus(todaysWeatherObj.cloud);
 
 	let todayTemp = todayForecast.querySelector("#todaysTemperature") as HTMLElement;
-	let tempScale = scale === "C" ? "tempC" : "tempF";
+
+	type TempKeys = "tempC" | "tempF";
+	let tempScale: TempKeys = scale === "C" ? "tempC" : "tempF";
 	todayTemp.textContent = `${todaysWeatherObj[tempScale]} °${scale}`;
 };

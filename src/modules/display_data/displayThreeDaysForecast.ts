@@ -1,6 +1,7 @@
+import { OneDayData } from "../fetch_data/fetchThreeDayForecast";
 import { Scale } from "../state";
 
-export function displayThreeDayForecast (threeDayForecastArr, scale: Scale) {
+export function displayThreeDayForecast (threeDayForecastArr: OneDayData[], scale: Scale) {
 	//displaying forecast for 3 days
 	let futureForecast = document.querySelector(".futureForecastWrapper") as HTMLElement;
 	futureForecast.style.display = "flex";

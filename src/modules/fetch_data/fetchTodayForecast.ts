@@ -1,5 +1,6 @@
-interface FetchedTodayData {
+export interface FetchedTodayData {
     city: string,
+    country: string,
     localtime: string,
     condition: string,
     humidity: number,
@@ -17,12 +18,13 @@ export async function fetchTodayWeather (city: string): Promise<FetchedTodayData
             city;
         let response = await fetch(searchString, { mode: "cors" });
         let weatherData = await response.json();
-
+        console.log(weatherData);
         if (!response.ok) {
             throw new Error("Произошла ошибка: " + response.status);
         }
         return {
             city: weatherData.location.name,
+            country: weatherData.location.country,
             localtime: weatherData.location.localtime,
             condition: weatherData.current.condition.text,
             humidity: weatherData.current.humidity,

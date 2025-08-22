@@ -1,4 +1,4 @@
-interface OneDayData {
+export interface OneDayData {
     date: string,
     dayTC: number,
     dayTF: number,
