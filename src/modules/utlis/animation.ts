@@ -14,4 +14,3 @@ export async function playAnim(el: HTMLElement, animation: string, delayMs = 0):
       el.addEventListener('animationend', onEnd, { once: true });
     });
   }
-

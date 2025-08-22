@@ -1,10 +1,10 @@
 export type Scale = "F" | "C";
 let scale: Scale = "F";
 
-export function getScale() {
+export function getScale(): Scale {
   return scale;
 }
 
-export function setScale(newScale: Scale) {
+export function setScale(newScale: Scale): void {
   scale = newScale;
 }

@@ -1,8 +1,10 @@
 import { displayThreeDayForecast } from "../display_data/displayThreeDaysForecast";
 import { displayTodayForecast } from "../display_data/displayTodayForecast";
+import { OneDayData } from "../fetch_data/fetchThreeDayForecast";
+import { FetchedTodayData } from "../fetch_data/fetchTodayForecast";
 import { getScale, Scale } from "../state";
 
-export function changeScale(todayForecastObject, threeDayForecastArray) {
+export function changeScale(todayForecastObject: FetchedTodayData, threeDayForecastArray: OneDayData[]) {
     let scale: Scale = getScale();
     let changeScaleBtn = document.getElementById("changeTempUnit") as HTMLElement;
 
