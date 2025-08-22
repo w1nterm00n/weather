@@ -1,20 +1,20 @@
 export function displayTodayForecast (todaysWeatherObj, scale) {
-	let todayForecast = document.querySelector(".todayForecastWrapper");
+	let todayForecast = document.querySelector(".todayForecastWrapper") as HTMLElement;
 	todayForecast.style.display = "flex";
 
 	//displaying local info
-	let cityName = todayForecast.querySelector("#cityName");
+	let cityName = todayForecast.querySelector("#cityName") as HTMLElement;
 	cityName.textContent = todaysWeatherObj.city + ", ";
-	let country = todayForecast.querySelector("#country");
+	let country = todayForecast.querySelector("#country") as HTMLElement;
 	country.textContent = todaysWeatherObj.country;
-	let localtime = todayForecast.querySelector("#todaysDate");
+	let localtime = todayForecast.querySelector("#todaysDate") as HTMLElement;
 	localtime.textContent = todaysWeatherObj.localtime;
-	let todayCondition = todayForecast.querySelector("#conditionText");
+	let todayCondition = todayForecast.querySelector("#conditionText") as HTMLElement;
 	todayCondition.textContent = todaysWeatherObj.condition;
-	let todayIcon = todayForecast.querySelector(".icon");
+	let todayIcon = todayForecast.querySelector(".icon") as HTMLElement;
 	let iconLink = todaysWeatherObj.icon;
 
-	let getTodayIcon = async function (iconLink) {
+	let getTodayIcon = async function (iconLink: string) {
 		try {
 			let searchString = "https:" + iconLink;
 			let response = await fetch(searchString, { mode: "cors" });
@@ -28,13 +28,13 @@ export function displayTodayForecast (todaysWeatherObj, scale) {
 	getTodayIcon(iconLink);
 
 	//displaying weather info
-	let humidity = todayForecast.querySelector("#humidity");
+	let humidity = todayForecast.querySelector("#humidity") as HTMLElement;
 	humidity.textContent = "Humidity: " + todaysWeatherObj.humidity + " %";
-	let windKPH = todayForecast.querySelector("#windKPH");
+	let windKPH = todayForecast.querySelector("#windKPH") as HTMLElement;
 	windKPH.textContent = "Wind: " + todaysWeatherObj.windKPH + " kph";
-	let cloudness = todayForecast.querySelector("#cloudness");
+	let cloudness = todayForecast.querySelector("#cloudness") as HTMLElement;
 
-	function getCloudStatus(value) {
+	function getCloudStatus(value: number) {
 		if (value === 0) return "Clear";
 		if (value <= 25) return "Little cloudy";
 		if (value <= 50) return "Partly cloudy";
@@ -43,7 +43,7 @@ export function displayTodayForecast (todaysWeatherObj, scale) {
 	}
 	cloudness.textContent = "Cloudness: " + getCloudStatus(todaysWeatherObj.cloud);
 
-	let todayTemp = todayForecast.querySelector("#todaysTemperature");
+	let todayTemp = todayForecast.querySelector("#todaysTemperature") as HTMLElement;
 	let tempScale = scale === "C" ? "tempC" : "tempF";
 	todayTemp.textContent = `${todaysWeatherObj[tempScale]} °${scale}`;
 };
